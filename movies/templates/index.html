@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}MOVIES{% endblock title %}
+{% block content %}
+<p class="p-2">Hola, estas son las películas que hay:</p>
+<ul class="list-group">
+    {% for movie in movies %}
+    <li class="list-group-item">
+        <a href="movie/{{ movie.id }}">{{ movie | capfirst }}</a>
+        <p>{{ movie.name }} - {{ movie.publication }}</p>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock content %}       
